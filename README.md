@@ -17,3 +17,6 @@ Need to fix:
 ```sh
 $ make
 $ docker-compose up
+
+
+This is a fork of tezet/open-hr20-mqtt-docker (https://github.com/tezet/open-hr20-mqtt-docker). Thanks to tezet for his work!
