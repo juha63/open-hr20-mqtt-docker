@@ -4,28 +4,10 @@
 $TIMEZONE="Europe/Berlin";
 
 $names = array (
-    0x10 => 'werkstatt',
-    0x11 => 'waschkueche',
-    0x12 => 'waeschekammer',
-    0x13 => 'treppenhaus',
-    0x0C => 'gaesteklo',
-    0x01 => 'buero_neu',
-    0x02 => 'bad_unten',
-    0x03 => 'kueche',
-    0x04 => 'ez1',
-    0x05 => 'ez2',
-    0x06 => 'wz1',
-    0x07 => 'wz2',
-    0x08 => 'wz3',
-    0x09 => 'bad_oben',
-    0x0A => 'sabine',
-    0x0B => 'juergen',
-    0x0D => 'kueche_oben', // default setting in valves
-    0x0E => 'sz1',
-    0x0F => 'sz2',
-  //  0x0b => 'salon', // default setting in valves
-   // 0x0c => 'dzieciecy', // default setting in valves
-  ); 
+  0x01 => 'Kueche',
+  0x02 => 'EZ1',
+  0x03 => 'EZ2'
+);
 
 
 //$api_keys = array (
@@ -230,7 +212,7 @@ while(($line=fgets($fp,256))!==FALSE) {
                         $st['error']=hexdec(substr($item,1));
                         break;
                     case 'W':
-                        $st['window']=100;
+                        $st['window']=1;
                         break;
                     case 'X':
                         $st['force']=1;
@@ -249,7 +231,7 @@ while(($line=fgets($fp,256))!==FALSE) {
             $time = (int)($time/3600)*3600+$t;
         	$db->query("INSERT INTO log (time,addr$vars) VALUES ($time,$addr$val)\n");
 
-	        $cmnd = "mosquitto_pub -h openhabnix.local -p 1883 -r -t \"haus/".$names[(int)$addr]."/hr20\" -m '{\"t_real\": ".((int)$st['real']/100).", \"t_wanted\": ".((int)$st['wanted']/100).", \"valve\": ".$st['valve'].", \"battery\": ".(int)(((((int)$st['battery']/1000) - 2.0)/1.18 * 100)).", \"mode\": \"".$st['mode']."\", \"error\": ".$st['error'].", \"window\": ".$st['window']."}'";
+	        $cmnd = "mosquitto_pub -h openhabnix.local -p 1883 -r -t \"dom/".$names[(int)$addr]."/hr20\" -m '{\"t_real\": ".((int)$st['real']/100).", \"t_wanted\": ".((int)$st['wanted']/100).", \"valve\": ".$st['valve'].", \"battery\": ".(int)(((((int)$st['battery']/1000) - 1.85)/1.03 * 100)).", \"mode\": \"".$st['mode']."\", \"error\": ".$st['error']."}'";
 		echo $cmnd."\n";
 		system($cmnd);
 

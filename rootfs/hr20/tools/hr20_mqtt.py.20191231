@@ -33,8 +33,8 @@ app.config['MQTT_LAST_WILL_TOPIC'] = 'home/hass/hr20'
 app.config['MQTT_LAST_WILL_MESSAGE'] = ''
 app.config['MQTT_LAST_WILL_QOS'] = 2
 
-HR20_TEMP_TOPIC = 'haus/+/hr20/temp'
-HR20_MODE_TOPIC = 'haus/+/hr20/mode'
+HR20_TEMP_TOPIC = 'dom/+/hr20/temp'
+HR20_MODE_TOPIC = 'dom/+/hr20/mode'
 
 DB_FILE = '/config/db/openhr20.sqlite'
 
@@ -49,25 +49,11 @@ socketio = SocketIO(app)
 logger = logging.getLogger('mqttlistener')
 
 address = {}
-address['buero_neu'] = 1
-address['bad_unten'] = 2
-address['kueche'] = 3
-address['ez1'] = 4
-address['ez2'] = 5
-address['wz1'] = 6
-address['wz2'] = 7
-address['wz3'] = 8
-address['bad_oben'] = 9
-address['sabine'] = 10
-address['juergen'] = 11
-address['gaesteklo'] = 12
-address['kueche_oben'] = 13
-address['sz1'] = 14
-address['sz2'] = 15
-address['werkstatt'] = 16
-address['waschkueche'] = 17
-address['waeschekammer'] = 18
-address['treppenhaus'] = 19
+address['Kueche'] = 1
+address['EZ1'] = 2
+address['EZ2'] = 3
+
+
 
 def execute_command(addr, data):
   with lock:

@@ -1,7 +1,7 @@
 <?php
 
 $db = new SQLite3("/config/db/openhr20.sqlite");
-$TIMEZONE="Europe/Warsaw";
+$TIMEZONE="Europe/Berlin";
 $RRD_ENABLE=false;
 $PLOTS_DIR = "plots";
 $RRD_DAYS = array (3, 7, 30, 90);
@@ -10,16 +10,30 @@ $RRD_DAYS = array (3, 7, 30, 90);
 
   // translation table for valve names
   // example:
-   $room_name = array (
-    0x01 => 'salon', // default setting in valves
-    0x02 => 'sypialnia', // default setting in valves
-    0x03 => 'lazienka', // default setting in valves
-    0x04 => 'nowa1',
-    0x05 => 'nowa2',
-    //0x04 => 'test1',
-    //0x05 => 'test2',
-    //0x06 => 'test3',
+$room_name = array (
+    0x10 => 'Werkstatt',
+    0x11 => 'Waschküche',
+    0x12 => 'Wäschekammer',
+    0x13 => 'Treppenhaus',
+    0x0C => 'Gästeklo',
+    0x01 => 'Büro neu',
+    0x02 => 'Bad unten',
+    0x03 => 'Küche',
+    0x04 => 'EZ1',
+    0x05 => 'EZ2',
+    0x06 => 'WZ1',
+    0x07 => 'WZ2',
+    0x08 => 'WZ3',
+    0x09 => 'Bad oben',
+    0x0A => 'Sabine',
+    0x0B => 'Jürgen',
+    0x0D => 'Küche oben', // default setting in valves
+    0x0E => 'SZ1',
+    0x0F => 'SZ2'
+  //  0x0b => 'salon', // default setting in valves
+   // 0x0c => 'dzieciecy', // default setting in valves
   ); 
+
 /*  $room_name = array (
     0x11 => 'decak',
     0x12 => 'obyvak',
