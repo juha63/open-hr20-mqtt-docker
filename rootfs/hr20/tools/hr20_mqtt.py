@@ -6,9 +6,10 @@ HR20 mqtt gateway
 
 import eventlet
 import json
-from flask import Flask
+from flask import Flask, render_template
 from flask_mqtt import Mqtt
 from flask_socketio import SocketIO
+
 import sqlite3
 import datetime
 import time
@@ -23,7 +24,7 @@ eventlet.monkey_patch()
 app = Flask(__name__)
 app.config['SECRET'] = ''
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['MQTT_BROKER_URL'] = 'openhabnix.local'
+app.config['MQTT_BROKER_URL'] = '192.168.188.22'
 app.config['MQTT_BROKER_PORT'] = 1883
 app.config['MQTT_USERNAME'] = 'openhabian'
 app.config['MQTT_PASSWORD'] = ''

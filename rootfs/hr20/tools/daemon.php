@@ -249,7 +249,7 @@ while(($line=fgets($fp,256))!==FALSE) {
             $time = (int)($time/3600)*3600+$t;
         	$db->query("INSERT INTO log (time,addr$vars) VALUES ($time,$addr$val)\n");
 
-	        $cmnd = "mosquitto_pub -h openhabnix.local -p 1883 -r -t \"haus/".$names[(int)$addr]."/hr20\" -m '{\"t_real\": ".((int)$st['real']/100).", \"t_wanted\": ".((int)$st['wanted']/100).", \"valve\": ".$st['valve'].", \"battery\": ".(int)(((((int)$st['battery']/1000) - 2.0)/1.18 * 100)).", \"mode\": \"".$st['mode']."\", \"error\": ".$st['error'].", \"window\": ".$st['window']."}'";
+	        $cmnd = "mosquitto_pub -h 192.168.188.22 -p 1883 -r -t \"haus/".$names[(int)$addr]."/hr20\" -m '{\"t_real\": ".((int)$st['real']/100).", \"t_wanted\": ".((int)$st['wanted']/100).", \"valve\": ".$st['valve'].", \"battery\": ".(int)(((((int)$st['battery']/1000) - 2.0)/1.18 * 100)).", \"mode\": \"".$st['mode']."\", \"error\": ".$st['error'].", \"window\": ".$st['window']."}'";
 		echo $cmnd."\n";
 		system($cmnd);
 

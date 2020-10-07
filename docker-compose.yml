@@ -12,6 +12,6 @@ services:
         devices:
              - '${SERIAL_PORT}:/dev/ttyUSB-HR20'
         environment:
-            - TZ
+            - TZ:Europe/Berlin
         container_name: openhr20new
 
