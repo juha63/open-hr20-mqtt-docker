@@ -50,25 +50,27 @@ socketio = SocketIO(app)
 logger = logging.getLogger('mqttlistener')
 
 address = {}
-address['buero_neu'] = 1
-address['bad_unten'] = 2
-address['kueche'] = 3
-address['ez1'] = 4
-address['ez2'] = 5
-address['wz1'] = 6
-address['wz2'] = 7
-address['wz3'] = 8
-address['bad_oben'] = 9
-address['sabine'] = 10
-address['juergen'] = 11
-address['gaesteklo'] = 12
-address['kueche_oben'] = 13
-address['sz1'] = 14
-address['sz2'] = 15
-address['werkstatt'] = 16
-address['waschkueche'] = 17
-address['waeschekammer'] = 18
-address['treppenhaus'] = 19
+address['saal'] = 1
+address['vraum'] = 2
+address['k_stuuv'] = 3
+address['kabuff'] = 4
+address['wc1'] = 5
+address['wc2'] = 6
+address['kueche'] = 7
+address['g_stuuv_1'] = 8
+address['g_stuuv_2'] = 9
+address['eingang'] = 10
+address['gr_zimmer'] = 11
+address['zimmer_m_1'] = 12
+address['zimmer_m_2'] = 13
+address['studio'] = 14
+address['wc3'] = 15
+address['h_verein_1'] = 16
+address['h_verein_2'] = 17
+address['musik'] = 18
+address['wc4'] = 19
+address['heizung'] = 20
+address['fwh'] = 21
 
 def execute_command(addr, data):
   with lock:

@@ -11,25 +11,29 @@ $RRD_DAYS = array (3, 7, 30, 90);
   // translation table for valve names
   // example:
 $room_name = array (
-    0x10 => 'Werkstatt',
-    0x11 => 'Waschküche',
-    0x12 => 'Wäschekammer',
-    0x13 => 'Treppenhaus',
-    0x0C => 'Gästeklo',
-    0x01 => 'Büro neu',
-    0x02 => 'Bad unten',
-    0x03 => 'Küche',
-    0x04 => 'EZ1',
-    0x05 => 'EZ2',
-    0x06 => 'WZ1',
-    0x07 => 'WZ2',
-    0x08 => 'WZ3',
-    0x09 => 'Bad oben',
-    0x0A => 'Sabine',
-    0x0B => 'Jürgen',
-    0x0D => 'Küche oben', // default setting in valves
-    0x0E => 'SZ1',
-    0x0F => 'SZ2'
+    0x01 => 'Saal',
+    0x02 => 'Vorraum',
+    0x03 => 'Klönstuuv',
+    0x04 => 'Kabuff', 
+    0x05 => 'WC1',
+    0x06 => 'WC2',
+    0x07 => 'Kueche',
+    0x08 => 'Goode Stuuv 1',
+    0x09 => 'Goode Stuuv 2',
+    0x0A => 'Eingang',
+    0x0B => 'Großes Zimmer',
+    0x0C => 'Raum mitte 1',
+    0x0D => 'Raum mitte 2',
+    0x0E => 'Studio',
+    0x0F => 'WC3', // default setting in valves
+    0x10 => 'Heimat 1',
+    0x11 => 'Heimat 2',
+    0x12 => 'Musikraum',
+    0x13 => 'WC4',
+    0x14 => 'Heizungsraum',
+    0x15 => 'Füürwehrhörner'
+
+
   //  0x0b => 'salon', // default setting in valves
    // 0x0c => 'dzieciecy', // default setting in valves
   ); 
